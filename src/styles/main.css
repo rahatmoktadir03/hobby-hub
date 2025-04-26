@@ -1,0 +1,115 @@
+body {
+  font-family: "Press Start 2P", cursive, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #c5c6c7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3, #e0eafc);
+  color: #222;
+}
+
+body.dark-theme {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #c5c6c7;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: inherit;
+  text-shadow: 0 0 5px #45a29e;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #45a29e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive, Arial, sans-serif;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #66fcf1;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.post-card {
+  border: 1px solid #45a29e;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  background-color: #112f3e;
+  font-family: "Press Start 2P", cursive, Arial, sans-serif;
+  box-shadow: 0 0 10px #45a29e;
+  transition: background-color 0.3s ease;
+}
+
+.post-card:hover {
+  background-color: #1a4a6a;
+}
+
+.meta {
+  font-size: 0.9em;
+  color: #45a29e;
+}
+
+.flag-tag {
+  background-color: #ffecb3;
+  color: #d08b00;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #45a29e;
+  border-radius: 5px;
+  background-color: #0f2027;
+  color: #c5c6c7;
+  font-family: "Press Start 2P", cursive, Arial, sans-serif;
+}
+
+textarea {
+  height: 150px;
+}

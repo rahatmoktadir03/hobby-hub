@@ -1,0 +1,28 @@
+.search-bar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #66fcf1;
+  pointer-events: none;
+}
+
+.search-bar {
+  padding-left: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #45a29e;
+  background-color: #0f2027;
+  color: #c5c6c7;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  font-size: 12px;
+}
+
+.search-bar::placeholder {
+  color: #45a29e;
+}

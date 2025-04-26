@@ -1,0 +1,33 @@
+.post-card {
+  padding: 1rem;
+  border: 1px solid #45a29e;
+  border-radius: 10px;
+  background-color: #112f3e;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px #45a29e;
+  color: #c5c6c7;
+  font-family: "Press Start 2P", cursive, sans-serif;
+}
+
+.post-card:hover {
+  background-color: #1a4a6a;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #66fcf1;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #66fcf1;
+  text-shadow: 0 0 5px #45a29e;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #45a29e;
+  font-size: 0.9rem;
+  font-family: "Press Start 2P", cursive, sans-serif;
+}

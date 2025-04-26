@@ -1,0 +1,19 @@
+.home-container {
+  font-family: "Press Start 2P", cursive, sans-serif;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #c5c6c7;
+  min-height: 100vh;
+  background-image: url("/backgrounds/game-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
