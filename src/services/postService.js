@@ -155,6 +155,12 @@ export async function createPost(post) {
 }
 
 export async function updatePost(id, updates) {
+  // Check if it's a demo post - demo posts cannot be updated
+  const demoPost = DEMO_POSTS.find((post) => post.id === id);
+  if (demoPost) {
+    throw new Error("Demo posts are read-only and cannot be updated.");
+  }
+
   const { data, error } = await supabase
     .from("posts")
     .update(updates)
@@ -166,6 +172,12 @@ export async function updatePost(id, updates) {
 }
 
 export async function deletePost(id) {
+  // Check if it's a demo post - demo posts cannot be deleted
+  const demoPost = DEMO_POSTS.find((post) => post.id === id);
+  if (demoPost) {
+    throw new Error("Demo posts cannot be deleted.");
+  }
+
   const { error } = await supabase.from("posts").delete().eq("id", id);
   if (error) throw error;
 }
