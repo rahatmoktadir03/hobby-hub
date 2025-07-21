@@ -44,6 +44,36 @@ const HomePage = () => {
 
   return (
     <div className="home-container">
+      {/* Forum Stats Section */}
+      <div className="forum-stats">
+        <div className="stat-item">
+          <span className="stat-number">{posts.length}</span>
+          <span className="stat-label">Total Posts</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-number">
+            {posts.reduce((sum, post) => sum + post.upvotes, 0)}
+          </span>
+          <span className="stat-label">Total Upvotes</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-number">
+            {
+              posts.filter(
+                (post) =>
+                  post.created_at >
+                  new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+              ).length
+            }
+          </span>
+          <span className="stat-label">Today's Posts</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-number">🔥</span>
+          <span className="stat-label">Gaming Hub</span>
+        </div>
+      </div>
+
       <section className="controls">
         <SearchBar value={searchQuery} onChange={handleSearchChange} />
         <SortBar value={sortOption} onChange={handleSortChange} />
@@ -51,7 +81,9 @@ const HomePage = () => {
 
       <section className="post-feed">
         {sortedPosts.length === 0 ? (
-          <p className="no-posts">No posts yet. Be the first to post!</p>
+          <p className="no-posts">
+            🎮 No posts yet. Be the first gamer to share your epic moments! 🎮
+          </p>
         ) : (
           sortedPosts.map((post) => <PostCard key={post.id} post={post} />)
         )}

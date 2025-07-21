@@ -1,19 +1,128 @@
 .home-container {
   font-family: "Press Start 2P", cursive, sans-serif;
   padding: 1rem;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #c5c6c7;
+  color: #00ff88;
   min-height: 100vh;
-  background-image: url("/backgrounds/game-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
 
 .controls {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0;
+  margin: 2rem 0;
   flex-wrap: wrap;
   align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.1),
+    rgba(0, 136, 255, 0.1)
+  );
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.post-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.no-posts {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #00cc6a;
+  padding: 3rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.1),
+    rgba(0, 136, 255, 0.1)
+  );
+  border: 2px dashed rgba(0, 255, 136, 0.5);
+  border-radius: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  grid-column: 1 / -1;
+}
+
+/* Gaming UI enhancements */
+.forum-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.05),
+    rgba(255, 0, 136, 0.05)
+  );
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #00cc6a;
+  text-transform: uppercase;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0.5rem;
+  }
+
+  .forum-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .post-feed {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-number {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+  }
+
+  .forum-stats {
+    margin: 1rem 0;
+  }
 }

@@ -11,6 +11,7 @@ import PostDetailPage from "./pages/PostDetailPage";
 import EditPostPage from "./pages/EditPostPage";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import NavBar from "./components/NavBar";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import "./styles/main.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/post/:id/edit" element={<EditPostPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <ScrollToTop />
       </Router>
     </div>
   );

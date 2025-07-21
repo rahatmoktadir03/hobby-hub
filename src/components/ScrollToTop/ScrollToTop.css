@@ -1,0 +1,66 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(45deg, #00ff88, #00cc6a);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.scroll-to-top:hover {
+  background: linear-gradient(45deg, #00cc6a, #00ff88);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.6);
+}
+
+.scroll-to-top svg {
+  font-size: 1rem;
+  animation: rocket 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    box-shadow: 0 5px 30px rgba(0, 255, 136, 0.6);
+  }
+  100% {
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+  }
+}
+
+@keyframes rocket {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.8rem;
+    font-size: 0px; /* Hide text on mobile */
+  }
+
+  .scroll-to-top span {
+    display: none;
+  }
+}
