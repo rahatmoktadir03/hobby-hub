@@ -5,11 +5,11 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       <Link to="/" className="nav-link">
-        <FaHome /> 🏠 Home
+        <FaHome /> Home
       </Link>
       <span className="nav-separator">|</span>
       <Link to="/create" className="nav-link">
-        <FaPlus /> ✨ Create Epic Post
+        <FaPlus /> Create Epic Post
       </Link>
     </nav>
   );

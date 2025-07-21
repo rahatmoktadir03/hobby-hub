@@ -5,7 +5,16 @@ import { FaRegClock, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import "./PostCard.css";
 
 const PostCard = ({ post }) => {
-  const { id, title, created_at, upvotes, downvotes, image_url, flag } = post;
+  const {
+    id,
+    title,
+    created_at,
+    upvotes,
+    downvotes,
+    image_url,
+    flag,
+    is_demo,
+  } = post;
   const navigate = useNavigate();
 
   const handlePostClick = () => {
@@ -13,7 +22,12 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <div className="post-card" onClick={handlePostClick}>
+    <div
+      className={`post-card ${is_demo ? "demo-post" : ""}`}
+      onClick={handlePostClick}
+    >
+      {is_demo && <div className="demo-badge">🎮 Demo Post</div>}
+
       {flag && (
         <div className={`post-flag flag-${flag.toLowerCase()}`}>
           {flag === "Question" && "❓"}

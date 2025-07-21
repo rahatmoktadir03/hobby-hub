@@ -16,6 +16,11 @@
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .post-card::before {
@@ -78,23 +83,22 @@
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid rgba(0, 255, 136, 0.2);
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .post-meta span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
 
-.post-meta svg {
-  filter: drop-shadow(0 0 3px rgba(0, 255, 136, 0.5));
-}
-
-/* Gaming-style voting indicators */
 .post-votes {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .vote-count {
@@ -127,6 +131,44 @@
   border: 1px solid;
   backdrop-filter: blur(5px);
   z-index: 2;
+}
+
+/* Demo post badge styling */
+.demo-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  background: rgba(0, 136, 255, 0.2);
+  color: #0088ff;
+  border: 1px solid #0088ff;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  animation: demoPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes demoPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 136, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.6);
+  }
+}
+
+.demo-post {
+  border-color: #0088ff;
+  box-shadow: 0 0 20px rgba(0, 136, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.demo-post:hover {
+  border-color: #0066cc;
+  box-shadow: 0 10px 40px rgba(0, 136, 255, 0.4),
+    0 0 30px rgba(0, 136, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .flag-question {

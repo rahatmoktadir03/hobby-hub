@@ -85,6 +85,8 @@
   font-size: 10px;
   transition: all 0.3s ease;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  resize: none;
 }
 
 .gaming-input:focus,
@@ -113,8 +115,14 @@
 .image-input-wrapper {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
+  width: 100%;
+}
+
+.image-input-wrapper .gaming-input {
+  flex: 1;
+  margin: 0;
 }
 
 .input-icon {
@@ -235,4 +243,60 @@
   background: linear-gradient(135deg, #0f0f23, #1a1a2e);
   color: #00ff88;
   padding: 10px;
+}
+
+/* Light theme overrides */
+body.light-theme .create-post-header {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.1),
+    rgba(123, 0, 255, 0.1)
+  ) !important;
+  border-color: #0066cc !important;
+}
+
+body.light-theme .create-post-header h2 {
+  color: #0066cc !important;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.3) !important;
+}
+
+body.light-theme .header-icon {
+  color: #0066cc !important;
+  filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.5)) !important;
+}
+
+body.light-theme .create-post-form {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(248, 249, 250, 0.95)
+  ) !important;
+  border-color: #0066cc !important;
+}
+
+body.light-theme .gaming-input,
+body.light-theme .gaming-textarea,
+body.light-theme .gaming-select {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 249, 250, 0.9)
+  ) !important;
+  border-color: #0066cc !important;
+  color: #2d3436 !important;
+}
+
+body.light-theme .image-section {
+  border-color: rgba(0, 102, 204, 0.3) !important;
+  background: rgba(0, 123, 255, 0.02) !important;
+}
+
+body.light-theme .input-icon {
+  color: #0066cc !important;
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5)) !important;
+}
+
+body.light-theme .image-status {
+  color: #28a745 !important;
+  background: rgba(40, 167, 69, 0.1) !important;
 }
