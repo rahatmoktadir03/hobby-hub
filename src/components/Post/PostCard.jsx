@@ -1,16 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils/formatDate";
 import { FaRegClock, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import "./PostCard.css";
 
 const PostCard = ({ post }) => {
   const { id, title, created_at, upvotes, downvotes } = post;
+  const navigate = useNavigate();
+
+  const handlePostClick = () => {
+    navigate(`/post/${id}`);
+  };
 
   return (
-    <div
-      className="post-card"
-      onClick={() => (window.location.href = `/post/${id}`)}
-    >
+    <div className="post-card" onClick={handlePostClick}>
       <h3 className="post-title">{title}</h3>
       <div className="post-meta">
         <span>

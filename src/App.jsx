@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CreatePostPage from "./pages/CreatePostPage";
 import PostDetailPage from "./pages/PostDetailPage";
@@ -11,7 +16,7 @@ import "./styles/main.css";
 function App() {
   return (
     <div className="app">
-      <Router>
+      <Router basename="/">
         <header className="app-header">
           <h1>🎲 PixelQuest</h1>
           <ThemeToggle />
@@ -22,6 +27,7 @@ function App() {
           <Route path="/create" element={<CreatePostPage />} />
           <Route path="/post/:id" element={<PostDetailPage />} />
           <Route path="/post/:id/edit" element={<EditPostPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </div>

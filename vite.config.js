@@ -11,4 +11,9 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    historyApiFallback: {
+      rewrites: [{ from: /^\/forum\.html/, to: "/forum.html" }],
+    },
+  },
 });
